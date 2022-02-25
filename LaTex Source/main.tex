@@ -35,12 +35,21 @@
 \section*{Task 1 \\ Exploring Human Development Report (HDR) Data}
 \subsubsection*{Data Sets}
 
-All of the datasets I used are available on a public GitHub repo\footnote{\url{https://github.com/andrew-nash/datavis-asssignement-1}}. I downloaded the HDR data as instructed from the HDR data site, and the HDI time series data from canvas. I added numerous columns to the basic HDR table, mostly focusing on education and healthcare. I cleaned up extraneous rows, and added the \emph{Label} column to the HDR and HDI tables using Excel formulae. I formed a third dataset by joining the HDR and HDI data using Pandas. I also downloaded a csv listing countries and associated regional data - this was to enable ordering of countries by sub-region in some plots, which made it easier to identify regional trends and characteristics. I performed a pivot on this merged dataset in Tableau for the specific purposes of creating the animated map in Figure \ref{fig1:wmap}. 
+All of the datasets I used are available on a public GitHub repo\footnote{\url{https://github.com/andrew-nash/datavis-asssignement-1}}. I downloaded the HDR data as instructed from the HDR data site (included in the repo), and the HDI time series data from canvas. I added numerous columns to the basic HDR table, mostly focusing on education and healthcare. I cleaned up extraneous rows, and added the \emph{Label} column to the HDR and HDI tables using Excel formulae. I formed a third dataset by joining the HDR and HDI data using Pandas. The excel formula used, as well as the python script are in the repo. I also downloaded a csv listing countries and associated regional data - this was to enable ordering of countries by sub-region in some plots, which made it easier to identify regional trends and characteristics. I performed a pivot on this merged dataset in Tableau for the specific purposes of creating the animated map in Figure \ref{fig1:wmap}. 
 
 For task 2, I created a .data file directly from data.csv
-\subsection*{Free Exploration}
+
+\vspace{0.8cm}
+
+FOR TASK 1, I HAVE COMPILED ALL OF MY PLOTS INTO A CONVENIENTLY ORDERED STORY ON MY TABLEAU PUBLIC. NOTE THAT THIS TABLEAU PROJECT FEATURES SOME BONUS PLOTS THAT I DID NOT INCLUDE IN THE PROJECT, THESE SHOULD NOT BE CONSIDERED PART OF THE ASSIGNMENT. I THOUGHT I'D RETAIN THEM PURELY TO ILLUSTRATE MY THOUGHT PROCESS, WHERE THE STORY LINKED HERE IS AN EXACT 1:1 ORDERED MAPPING OF THE PLOTS IN THIS REPORT: \url{https://public.tableau.com/app/profile/andrew.nash/viz/ExploringTheHDR/AssignmentWalkthrough}
+
 \vspace{1cm}
-The first natural exploration of the HDR data. Interactive versions of all plots (in order) are available at by Tableau Public\footnote{\url{https://public.tableau.com/app/profile/andrew.nash/viz/ExploringTheHDR/Story1}}. This first aspect of the assignement is intended to be based heavily on the assumption that the HDI value assigned to a country by the UN is reflective of its general level of development, and the \textit{potential} quality of life for the average citizens in that country. This first aspect attempts to explore what factors seem to contribute to this HDI value.
+
+\subsection*{Free Exploration}
+
+\vspace{1cm}
+
+The first natural exploration of the HDR data. Interactive versions of all plots (in order) are available at by Tableau Public\footnote{\url{https://public.tableau.com/app/profile/andrew.nash/viz/ExploringTheHDR/Story1}}. This first aspect of the assignment is intended to be based heavily on the assumption that the HDI value assigned to a country by the UN is reflective of its general level of development, and the \textit{potential} quality of life for the average citizens in that country. This first aspect attempts to explore what factors seem to contribute to this HDI value.
 
 \subsubsection*{HDI By Country}
 \begin{center}
@@ -56,7 +65,7 @@ The purpose of this visualisation was to get a view of the geographic distributi
 
 \subsubsection*{Factors contributing to HDI}
 
-\begin{figure}[hb]
+\begin{figure}
 \centering
 \sbox{\measurebox}{%
   \begin{minipage}[b]{.40\textwidth}
@@ -82,7 +91,7 @@ The purpose of this visualisation was to get a view of the geographic distributi
 \clearpage
 
 \begin{center}
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \label{fig1:healthED}
 	\includegraphics[width=0.75\columnwidth]{healthEducation.png} 
@@ -914,7 +923,7 @@ Figures  \ref{fig:hdiTSNE5} and \ref{fig:hdiTSNE10} do show interesting behaviou
 
 This serves as an extremely brief summary of the key insights above, and is not a substitute for reading the parts themselves.
 
-\subsection{Task 1}
+\subsection*{Task 1}
 
 In task 1, I came to a few conclusions both about data visualisation as a technique, and by using it, from the HDR data.
 
@@ -924,11 +933,11 @@ In task 1, I came to a few conclusions both about data visualisation as a techni
     \item A few interesting hypothesis could be drawn from the data - including identifying war as the biggest contributor to a low HDI score, expecting the fixed costs of healthcare to be a disproportionate burden to poorer countries, and noticing the importance of the role of domestic industry in limiting emigration
 \end{enumerate}
 
-\subsection{Task 2}
+\subsection*{Task 2}
 
 The results of performing projections on different datasets varied greatly. An overall perspective is as follows:
 
-Images with strong colour features - i.e., ones that can be distinguished by their colour content, rather than shapes within the image (e.g, the Corel dataset) seem to perform better under Euclidean distance measure.  Greyscale images, like the Medical images, seem to perform better with cosine-based dissimilarity, which seems to potential handle shape differences slightly better, at the expense of handling direct colour differences.
+Images with strong colour features - i.e., ones that can be distinguished by their colour content, rather than shapes within the image (e.g, the Corel dataset) seem to perform better under Euclidean distance measure. Greyscale images, like the Medical images, seem to perform better with cosine-based dissimilarity, which seems to potential handle shape differences slightly better, at the expense of handling direct colour differences.
 
 Tree based visualisations, particularly when followed by force based placement, across all datasets made it much easier to identify points that tended to be misclassified, and understand why this is the case. Even if the clustering in these plots were insufficient, they should not be disregarded, as this diagnostic purpose is incredibly useful. For this reason, I would conclude that it is always beneficial to use these visualisations in conjunction with other projections more geared towards clustering. 
 
