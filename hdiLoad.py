@@ -1,0 +1,5 @@
+data = pd.read_csv('C:\\Users\\adn1\\Downloads\\data (1).csv',encoding = "ISO-8859-1")
+hdi = pd.read_csv('C:\\Users\\adn1\\Downloads\\hdi.csv',encoding = "ISO-8859-1")
+hdi["Country"]=hdi["Country"].str.rstrip("' ")
+merged = pd.merge(data, hdi, how="inner", on=["Country"])
+merged.to_csv('C:\\Users\\adn1\\Downloads\\merged.csv', index="False")
